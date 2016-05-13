@@ -11,6 +11,8 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'airblade/vim-gitgutter'
 
+    Plug 'sheerun/yajs.vim'
+
 call plug#end()
 
 " Remove startmessage
@@ -30,7 +32,6 @@ set nowrap
 
 " trailing whitespaces
 set list listchars=trail:🔴
-
 " Search Stuff
 set ignorecase  " ignore case in search
 set incsearch   " incremental search
