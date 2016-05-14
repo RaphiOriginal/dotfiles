@@ -21,6 +21,8 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'tpope/vim-commentary' " Multi line comments
 
+    Plug 'Shougo/neocomplete.vim' "Autocompletion
+
 call plug#end()
 
 " Remove startmessage
