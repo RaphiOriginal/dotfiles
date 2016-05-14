@@ -13,6 +13,12 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'sheerun/yajs.vim'
 
+    Plug 'ctrlpvim/ctrlp.vim' " Better filesearching
+    let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_cmd = 'CtrlP'
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 call plug#end()
 
 " Remove startmessage
@@ -29,6 +35,13 @@ set number
 set cursorline
 set spell
 set nowrap
+
+" tab settings
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set listchars=tab:\ \
 
 " trailing whitespaces
 set list listchars=trail:🔴
