@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'Shougo/neocomplete.vim' "Autocompletion
     let g:neocomplete#enable_at_startup = 1
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 call plug#end()
 
