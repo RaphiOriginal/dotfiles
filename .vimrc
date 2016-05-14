@@ -22,8 +22,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-commentary' " Multi line comments
 
     Plug 'Shougo/neocomplete.vim' "Autocompletion
+    let g:neocomplete#enable_at_startup = 1
 
 call plug#end()
+
+set backspace=indent,eol,start "fix delete
 
 " Remove startmessage
 set shortmess+=I
@@ -48,7 +51,8 @@ set shiftwidth=2
 set listchars=tab:\ \
 
 " trailing whitespaces
-set list listchars=trail:🔴
+set list listchars=trail:⚡️
+
 " Search Stuff
 set ignorecase  " ignore case in search
 set incsearch   " incremental search
