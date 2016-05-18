@@ -19,11 +19,13 @@ call plug#begin('~/.vim/plugged')
     let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
     set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
-    Plug 'tpope/vim-commentary' " Multi line comments
+    Plug 'tpope/vim-commentary' " Multi line comments with gcc
 
     Plug 'Shougo/neocomplete.vim' "Autocompletion
     let g:neocomplete#enable_at_startup = 1
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+    Plug 'davidhalter/jedi-vim' "Python Autocompletion
 
 call plug#end()
 
