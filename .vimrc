@@ -48,6 +48,11 @@ set cursorline
 set spell
 set nowrap
 
+" Type mistakes...
+command Wq wq
+command WQ wq
+command wQ wq
+
 " tab settings
 set expandtab
 set tabstop=2
