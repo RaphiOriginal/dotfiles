@@ -52,6 +52,7 @@ set nowrap
 command Wq wq
 command WQ wq
 command wQ wq
+command W w
 
 " tab settings
 set expandtab
