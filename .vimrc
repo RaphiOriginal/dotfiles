@@ -25,7 +25,9 @@ call plug#begin('~/.vim/plugged')
     let g:neocomplete#enable_at_startup = 1
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-    Plug 'davidhalter/jedi-vim' "Python Autocompletion
+    Plug 'davidhalter/jedi-vim' "Python Autocompletioln
+
+    Plug 'jiangmiao/auto-pairs' "auto brakets
 
 call plug#end()
 
