@@ -53,6 +53,7 @@ command Wq wq
 command WQ wq
 command wQ wq
 command W w
+command Q q
 
 " tab settings
 set expandtab
@@ -79,6 +80,7 @@ set splitright " open right instead of left
 
 " Color Stuff
 set t_Co=256
+set background=dark
 colorscheme base16-eighties " requires other configurations in iterm (load configuration in colors
 
 " No backup Stuff
