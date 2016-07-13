@@ -51,7 +51,6 @@ set nowrap
 " Type mistakes...
 command Wq wq
 command WQ wq
-command wQ wq
 command W w
 command Q q
 
