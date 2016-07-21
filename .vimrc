@@ -11,7 +11,12 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'airblade/vim-gitgutter'
 
+    Plug 'wincent/terminus' " enhanced terminal integration:w
+
     Plug 'sheerun/yajs.vim'
+
+    Plug 'mxw/vim-jsx' " for react (jsx)
+      let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 
     Plug 'ctrlpvim/ctrlp.vim' " Better filesearching
     let g:ctrlp_map = '<c-p>'
@@ -21,15 +26,50 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'tpope/vim-commentary' " Multi line comments with gcc
 
-    Plug 'Shougo/neocomplete.vim' "Autocompletion
-    let g:neocomplete#enable_at_startup = 1
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+    Plug 'Shougo/deoplete.nvim' "Autocompletion
+    let g:deoplete#enable_at_startup = 1
+"    let g:deoplete#disable_auto_complete = 1
+    let g:deoplete#max_list = 5
+    inoremap <silent><expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
     Plug 'davidhalter/jedi-vim' "Python Autocompletioln
 
     Plug 'jiangmiao/auto-pairs' "auto brakets
 
+    Plug 'tpope/vim-fugitive' "some git magic with vim
+
+    Plug 'scrooloose/syntastic' "some syntastic stuff for eslint
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_javascript_checkers = ['jslint']
+
+    Plug 'benekastah/neomake'
+    autocmd! BufWritePost,BufWinEnter * silent Neomake
+    autocmd BufWritePost *.js silent Neomake eslint
+    let g:neomake_javascript_eslint_exe = './node_modules/eslint/bin/eslint.js'
+    let g:neomake_javascript_enabled_makers = ['eslint, flow']
+    let g:neomake_open_list = 0
+
+    let g:neomake_error_sign = {
+      \ 'text': '‣‣',
+      \ 'texthl': 'ErrorMsg',
+      \ }
+    highlight myWarningMsg ctermbg=0 ctermfg=3 guibg=0 guifg=yellow
+    let g:neomake_warning_sign = {
+      \ 'text': '‣‣',
+      \ 'texthl': 'myWarningMsg',
+      \ }
+
 call plug#end()
+
+set langmenu=en_US.UTF-8
+language C
 
 set backspace=indent,eol,start "fix delete
 
