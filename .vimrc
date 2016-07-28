@@ -26,6 +26,15 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'tpope/vim-commentary' " Multi line comments with gcc
 
+    Plug 'Shougo/neosnippet' "Snippets integrated in deoplete
+    Plug 'Shougo/neosnippet-snippets'
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k> <Plug>(neosnippet_expand_target)
+
+    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+          \ "<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
     Plug 'Shougo/deoplete.nvim' "Autocompletion
     let g:deoplete#enable_at_startup = 1
 "    let g:deoplete#disable_auto_complete = 1
@@ -67,6 +76,9 @@ call plug#begin('~/.vim/plugged')
       \ }
 
 call plug#end()
+
+" order of snippets and buffer in deoplete
+call deoplete#custom#set('buffer', 'rank', 9999)
 
 set langmenu=en_US.UTF-8
 language C
